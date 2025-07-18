@@ -43,6 +43,13 @@ use core\hook\manager as hook_manager;
 
 defined('MOODLE_INTERNAL') || die();
 
+// XTEC ************ AFEGIT - Allow access only to xtecadmin.
+// 2025.07.18 @aginard
+if (!get_protected_agora()) {
+    return;
+}
+// ************ FI
+
 if ($hassiteconfig || has_capability('theme/boost_union:configure', context_system::instance())) {
     global $PAGE;
 
